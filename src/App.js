@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery'; 
 import './App.css';
+import Weather from './Weather'
 
 class App extends Component {
   constructor(props) {
@@ -44,10 +45,12 @@ class App extends Component {
   }
 
   render() {
-
-
-    return <div>
-    </div>
+    return(
+        <Weather
+          city={this.state.city}
+          temp={this.state.temperature}
+          weather={this.state.weather} />
+      )
   }
 }
 
