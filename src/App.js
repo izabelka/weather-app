@@ -9,11 +9,14 @@ class App extends Component {
     this.state = {
       city: '',
       latitude: '',
-      longitude: ''};
+      longitude: '',
+      temp: '',
+      weather: ''};
   }
 
   componentDidMount() {
     this.getCoordinates();
+    setTimeout( function() {this.getWeather()}.bind(this), 3000);
   }
 
   getCoordinates() {
@@ -27,13 +30,26 @@ class App extends Component {
       });
   }
 
+  getWeather() {
+    const apiKey = 'daed4a90d4dc00a02f5d25d3d22cf3a0';
+    return $.getJSON('http://api.openweathermap.org/data/2.5/weather?lat='
+      + this.state.latitude + '&lon=' + this.state.longitude +
+      '&units=metric&APPID='+ apiKey)
+      .then((data) => {
+        this.setState({ 
+          temp: data.main.temp,
+          weather: data.weather[0].main
+        });
+      });
+  }
+
   render() {
     console.log(this.state.latitude)
     return(
         <Weather
           city={this.state.city}
-          latitude={this.state.latitude}
-          longitude={this.state.longitude}/>
+          weather={this.state.weather}
+          temp={this.state.temp}/>
       )
   }
 }
