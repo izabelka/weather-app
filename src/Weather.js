@@ -3,6 +3,14 @@ import $ from 'jquery';
 
 class Weather extends Component {
 
+  changeUnits() {
+    if(this.props.unit === 'C'){
+      this.props.isCelsius('F');
+    } else {
+      this.props.isCelsius('C')
+    } 
+  }
+
   render() {
     return (
       <div id="weather-container">
@@ -10,7 +18,7 @@ class Weather extends Component {
           {this.props.city}
         </p>
         <p id="temperature">
-          {this.props.temp}
+          <span onClick={this.changeUnits.bind(this)}>{this.props.temp}  {this.props.unit}</span>
         </p>
         <p id="weather">
           {this.props.weather}

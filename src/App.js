@@ -11,7 +11,25 @@ class App extends Component {
       latitude: '',
       longitude: '',
       temp: '',
-      weather: ''};
+      weather: '',
+      unit: 'C'
+    };
+    this.changeUnits = this.changeUnits.bind(this);
+  }
+
+  changeUnits (newUnit) {
+    if (newUnit === 'F'){
+      this.setState({
+        unit: newUnit,
+        temp: Math.round((this.state.temp * 9 / 5 + 32) * 100) / 100
+      })
+    } else {
+      this.setState({
+        unit: newUnit,
+        temp: Math.round(((this.state.temp - 32) * 5 / 9) * 100) / 100
+      })
+    }
+
   }
 
   componentDidMount() {
@@ -44,12 +62,13 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.latitude)
     return(
         <Weather
           city={this.state.city}
           weather={this.state.weather}
-          temp={this.state.temp}/>
+          temp={this.state.temp}
+          unit={this.state.unit}
+          isCelsius={this.changeUnits}/>
       )
   }
 }
