@@ -10,6 +10,6 @@ I've created a simple one page app in React.js for showing local weather
 1. [x] Add API for location
 2. [x] Add API for weather
 3. [x] Display current weather
-4. [ ] Convert temperature to Celsius/Fahrenheit
+4. [x] Convert temperature to Celsius/Fahrenheit
 5. [ ] Add styles
 6. [ ] Publish to Github Pages
