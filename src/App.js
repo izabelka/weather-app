@@ -21,15 +21,22 @@ class App extends Component {
     if (newUnit === 'F'){
       this.setState({
         unit: newUnit,
-        temp: Math.round((this.state.temp * 9 / 5 + 32) * 100) / 100
+        temp: this.toCelsius(this.state.temp)
       })
     } else {
       this.setState({
         unit: newUnit,
-        temp: Math.round(((this.state.temp - 32) * 5 / 9) * 100) / 100
+        temp: this.toFahrenheit(this.state.temp)
       })
     }
+  }
 
+  toCelsius(temp) {
+    return Math.round((temp * 9 / 5 + 32) * 100) / 100
+  }
+
+  toFahrenheit(temp) {
+    return Math.round(((temp - 32) * 5 / 9) * 100) / 100
   }
 
   componentDidMount() {

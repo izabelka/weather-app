@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 
 class Weather extends Component {
 
@@ -18,7 +17,7 @@ class Weather extends Component {
           {this.props.city}
         </p>
         <p id="temperature">
-          <span onClick={this.changeUnits.bind(this)}>{this.props.temp}  {this.props.unit}</span>
+          <span onClick={this.changeUnits.bind(this)}>{this.props.temp} &deg;{this.props.unit}</span>
         </p>
         <p id="weather">
           {this.props.weather}
