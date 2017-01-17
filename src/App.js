@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery'; 
-import './App.css';
+import './css/App.css';
 import Weather from './Weather'
 
 class App extends Component {
@@ -63,7 +63,8 @@ class App extends Component {
       .then((data) => {
         this.setState({ 
           temp: data.main.temp,
-          weather: data.weather[0].main
+          weather: data.weather[0].main,
+          // city: data.name
         });
       });
   }
