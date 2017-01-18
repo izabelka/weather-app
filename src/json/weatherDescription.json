@@ -1,0 +1,26 @@
+{
+  "clear": {
+    "icon": "wi-day-sunny",
+    "img": "./img/clear_day.jpg" 
+  },
+  "clouds": {
+    "icon": "wi-cloudy",
+    "img": "./img/clouds.jpg" 
+  },
+  "mist": {
+    "icon": "wi-fog",
+    "img": "./img/mist.jpg" 
+  },
+  "rain": {
+    "icon": "wi-rain",
+    "img": "./img/rain.jpg" 
+  },
+  "snow": {
+    "icon": "wi-snow",
+    "img": "./img/snow.jpg" 
+  },
+  "storm": {
+    "icon": "wi-storm-showers",
+    "img": "./img/storm.jpg" 
+  },
+}
