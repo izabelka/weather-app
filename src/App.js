@@ -33,16 +33,16 @@ class App extends Component {
   }
 
   toCelsius(temp) {
-    return Math.round((temp * 9 / 5 + 32) * 100) / 100
+    return Math.round((temp * 9 / 5 + 32))
   }
 
   toFahrenheit(temp) {
-    return Math.round(((temp - 32) * 5 / 9) * 100) / 100
+    return Math.round(((temp - 32) * 5 / 9))
   }
 
   componentDidMount() {
     this.getCoordinates();
-    setTimeout( function() {this.getWeather()}.bind(this), 3000);
+    setTimeout( function() {this.getWeather()}.bind(this), 1000);
   }
 
   getCoordinates() {
@@ -60,12 +60,11 @@ class App extends Component {
     const apiKey = 'daed4a90d4dc00a02f5d25d3d22cf3a0';
     return $.getJSON('http://api.openweathermap.org/data/2.5/weather?lat='
       + this.state.latitude + '&lon=' + this.state.longitude +
-      '&units=metric&APPID='+ apiKey)
+      '&units=metric&APPID='+ apiKey )
       .then((data) => {
         this.setState({ 
-          temp: data.main.temp,
-          weather: data.weather[0].main,
-          // city: data.name
+          temp: Math.round(data.main.temp),
+          weather: data.weather[0].main
         });
       });
   }

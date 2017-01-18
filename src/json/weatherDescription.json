@@ -1,26 +1,26 @@
 {
   "clear": {
-    "icon": "wi-day-sunny",
+    "icon": "wi wi-day-sunny",
     "img": "./img/clear_day.jpg" 
   },
   "clouds": {
-    "icon": "wi-cloudy",
+    "icon": "wi wi-cloudy",
     "img": "./img/clouds.jpg" 
   },
   "mist": {
-    "icon": "wi-fog",
+    "icon": "wi wi-fog",
     "img": "./img/mist.jpg" 
   },
   "rain": {
-    "icon": "wi-rain",
+    "icon": "wi wi-rain",
     "img": "./img/rain.jpg" 
   },
   "snow": {
-    "icon": "wi-snow",
+    "icon": "wi wi-snow",
     "img": "./img/snow.jpg" 
   },
   "storm": {
-    "icon": "wi-storm-showers",
+    "icon": "wi wi-storm-showers",
     "img": "./img/storm.jpg" 
-  },
+  }
 }
