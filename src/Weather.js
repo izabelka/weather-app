@@ -19,6 +19,7 @@ class Weather extends Component {
         <p id="temperature">
           <span onClick={this.changeUnits.bind(this)}>{this.props.temp} &deg;{this.props.unit}</span>
         </p>
+        <i className="wi wi-fog"></i>
         <p id="weather">
           {this.props.weather}
         </p>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery'; 
 import './css/App.css';
+import './css/weather-icons.min.css';
 import Weather from './Weather'
 
 class App extends Component {
