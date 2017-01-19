@@ -80,7 +80,7 @@ class App extends Component {
           unit={this.state.unit}
           isCelsius={this.changeUnits}/>
         <div id="footer">
-          <span>Local weather app by</span> <a href="https://github.com/izabelka">Izabella Konstanciak</a><span>, 
+          <span>Local Weather App by</span> <a href="https://github.com/izabelka">Izabella Konstanciak</a><span>, 
           using </span><a href="http://openweathermap.org">OpenWeatherMap</a> <span>API 
           and </span><a href="https://erikflowers.github.io/weather-icons/">Weather Icons</a>
         </div>
