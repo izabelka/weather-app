@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import $ from 'jquery'; 
+import $ from 'jquery';
+import './css/reset.css';
 import './css/App.css';
 import './css/weather-icons.min.css';
 import Weather from './Weather'
@@ -42,7 +43,7 @@ class App extends Component {
 
   componentDidMount() {
     this.getCoordinates();
-    setTimeout( function() {this.getWeather()}.bind(this), 1000);
+    setTimeout( function() {this.getWeather()}.bind(this), 2500);
   }
 
   getCoordinates() {

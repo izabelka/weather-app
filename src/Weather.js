@@ -10,23 +10,27 @@ class Weather extends Component {
       this.props.isCelsius('C')
     } 
   }
-
   render() {
     if (this.props.weather !== '') {
       var icon = weatherDescription[this.props.weather.toLowerCase()]['icon'];
+      var weatherBackground = {
+        backgroundImage: `url(${weatherDescription[this.props.weather.toLowerCase()]['img']})`
+      };
     }
     return (
-      <div id="weather-container">
-        <p id="city">
-          {this.props.city}
-        </p>
-        <p id="temperature">
-          <span onClick={this.changeUnits.bind(this)}>{this.props.temp} &deg;{this.props.unit}</span>
-        </p>
-        <i className={icon}></i>
-        <p id="weather">
-          {this.props.weather}
-        </p>
+      <div id="weather-bg" style={weatherBackground}>
+        <div id="weather-container">
+          <p id="city">
+            {this.props.city}
+          </p>
+          <p id="temperature">
+            <span onClick={this.changeUnits.bind(this)}>{this.props.temp} &deg;{this.props.unit}</span>
+          </p>
+          <i className={icon}></i>
+          <p id="weather">
+            {this.props.weather}
+          </p>
+        </div>
       </div>
     )
   }
