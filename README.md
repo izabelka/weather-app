@@ -12,5 +12,6 @@ I've created a simple one page app in React.js for showing local weather
 3. [x] Display current weather
 4. [x] Convert temperature to Celsius/Fahrenheit
 5. [x] Add icons
-6. [ ] Add styles
-7. [ ] Publish to Github Pages
+6. [x] Add background images
+7. [x] Add styles
+8. [ ] Publish to Github Pages
