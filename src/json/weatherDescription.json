@@ -1,26 +1,26 @@
 {
   "clear": {
     "icon": "wi wi-day-sunny",
-    "img": "./img/clear_day.jpg" 
+    "img": "https://dl.dropboxusercontent.com/u/107222235/weather-app/clear_day.jpg" 
   },
   "clouds": {
     "icon": "wi wi-cloudy",
-    "img": "./img/clouds.jpg" 
+    "img": "https://dl.dropboxusercontent.com/u/107222235/weather-app/clouds.jpg" 
   },
   "mist": {
     "icon": "wi wi-fog",
-    "img": "./img/mist.jpg" 
+    "img": "https://dl.dropboxusercontent.com/u/107222235/weather-app/mist.jpg" 
   },
   "rain": {
     "icon": "wi wi-rain",
-    "img": "./img/rain.jpg" 
+    "img": "https://dl.dropboxusercontent.com/u/107222235/weather-app/rain.jpg" 
   },
   "snow": {
     "icon": "wi wi-snow",
-    "img": "./img/snow.jpg" 
+    "img": "https://dl.dropboxusercontent.com/u/107222235/weather-app/snow.jpg" 
   },
   "storm": {
     "icon": "wi wi-storm-showers",
-    "img": "./img/storm.jpg" 
+    "img": "https://dl.dropboxusercontent.com/u/107222235/weather-app/storm.jpg" 
   }
 }
