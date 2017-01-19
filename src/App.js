@@ -72,13 +72,20 @@ class App extends Component {
 
   render() {
     return(
+      <div>
         <Weather
           city={this.state.city}
           weather={this.state.weather}
           temp={this.state.temp}
           unit={this.state.unit}
           isCelsius={this.changeUnits}/>
-      )
+        <div id="footer">
+          <span>Local weather app by</span> <a href="https://github.com/izabelka">Izabella Konstanciak</a><span>, 
+          using </span><a href="http://openweathermap.org">OpenWeatherMap</a> <span>API 
+          and </span><a href="https://erikflowers.github.io/weather-icons/">Weather Icons</a>
+        </div>
+    </div>
+    )
   }
 }
 
