@@ -47,7 +47,7 @@ class App extends Component {
   }
 
   getCoordinates() {
-    return $.getJSON('http://freegeoip.net/json/')
+    return $.getJSON('https://freegeoip.net/json/')
       .then((data) => {
         this.setState({ 
           latitude: data.latitude,
@@ -59,13 +59,12 @@ class App extends Component {
 
   getWeather() {
     const apiKey = 'daed4a90d4dc00a02f5d25d3d22cf3a0';
-    return $.getJSON('http://api.openweathermap.org/data/2.5/weather?lat='
-      + this.state.latitude + '&lon=' + this.state.longitude +
-      '&units=metric&APPID='+ apiKey )
+    return $.getJSON('https://api.darksky.net/forecast/00f1eacb1d48f9e31c4c7285463780de/'
+      + this.state.latitude + ',' + this.state.longitude)
       .then((data) => {
         this.setState({ 
-          temp: Math.round(data.main.temp),
-          weather: data.weather[0].main
+          temp: Math.round(data.currently.temperature),
+          weather: data.weather.icon
         });
       });
   }
