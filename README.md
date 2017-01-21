@@ -4,7 +4,7 @@
 
 I've created a simple one page app in React.js for showing local weather
 
-***Demo:*** not available yet
+***Demo:*** https://izabelka.github.io/weather-app/
 
 ### To do:
 1. [x] Add API for location
