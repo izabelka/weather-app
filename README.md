@@ -14,4 +14,4 @@ I've created a simple one page app in React.js for showing local weather
 5. [x] Add icons
 6. [x] Add background images
 7. [x] Add styles
-8. [ ] Publish to Github Pages
+8. [x] Publish to Github Pages
