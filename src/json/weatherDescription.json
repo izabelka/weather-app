@@ -7,7 +7,7 @@
     "icon": "wi wi-cloudy",
     "img": "https://dl.dropboxusercontent.com/u/107222235/weather-app/clouds.jpg" 
   },
-  "mist": {
+  "fog": {
     "icon": "wi wi-fog",
     "img": "https://dl.dropboxusercontent.com/u/107222235/weather-app/mist.jpg" 
   },

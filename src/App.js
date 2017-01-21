@@ -58,13 +58,12 @@ class App extends Component {
   }
 
   getWeather() {
-    const apiKey = 'daed4a90d4dc00a02f5d25d3d22cf3a0';
-    return $.getJSON('https://api.darksky.net/forecast/00f1eacb1d48f9e31c4c7285463780de/'
+    return $.getJSON('https://api.apixu.com/v1/current.json?key=b8ddb5efd2c84f44b86144237172101&q='
       + this.state.latitude + ',' + this.state.longitude)
       .then((data) => {
         this.setState({ 
-          temp: Math.round(data.currently.temperature),
-          weather: data.weather.icon
+          temp: Math.round(data.current.temp_c),
+          weather: data.current.condition.text
         });
       });
   }
