@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-var weatherDescription = require('./json/weatherDescription.json');
+// var weatherDescription = require('./json/weatherDescription.json');
 
 class Weather extends Component {
 
@@ -11,10 +11,10 @@ class Weather extends Component {
     } 
   }
   render() {
-    if (this.props.weather !== '') {
-      var icon = weatherDescription[this.props.weather.toLowerCase()]['icon'];
+    if (this.props.backgroundImg !== '') {
+      // var icon = weatherDescription[this.props.weather.toLowerCase()]['icon'];
       var weatherBackground = {
-        backgroundImage: `url(${weatherDescription[this.props.weather.toLowerCase()]['img']})`
+        backgroundImage: `url(${this.props.backgroundImg})`
       };
     }
     return (
@@ -26,7 +26,7 @@ class Weather extends Component {
           <p id="temperature">
             <span onClick={this.changeUnits.bind(this)}>{this.props.temp} &deg;{this.props.unit}</span>
           </p>
-          <i className={icon}></i>
+          
           <p id="weather">
             {this.props.weather}
           </p>

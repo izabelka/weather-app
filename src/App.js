@@ -14,7 +14,8 @@ class App extends Component {
       longitude: '',
       temp: '',
       weather: '',
-      unit: 'C'
+      unit: 'C',
+      weatherImg: ''
     };
     this.changeUnits = this.changeUnits.bind(this);
   }
@@ -43,7 +44,8 @@ class App extends Component {
 
   componentDidMount() {
     this.getCoordinates();
-    setTimeout( function() {this.getWeather()}.bind(this), 2500);
+    setTimeout( function() {this.getWeather()}.bind(this), 2000);
+    setTimeout( function() {this.getWeatherImage()}.bind(this), 3000);
   }
 
   getCoordinates() {
@@ -68,6 +70,19 @@ class App extends Component {
       });
   }
 
+  getWeatherImage() {
+    return $.getJSON('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=ba3908d227b57ef7e5353363ed92c867&text='
+      + this.state.weather + '+weather&tags=' + this.state.weather + '&format=json&nojsoncallback=1')
+      .then((data) => {
+        let randomIndex = Math.floor(Math.random() * data.photos.perpage)
+        this.setState({ 
+          weatherImg: 'https://farm' + data.photos.photo[randomIndex].farm + '.staticflickr.com/'
+          + data.photos.photo[randomIndex].server  + '/' + data.photos.photo[randomIndex].id + '_' 
+          + data.photos.photo[randomIndex].secret + '_b.jpg'
+        });
+      });
+  }
+
   render() {
     return(
       <div>
@@ -76,11 +91,12 @@ class App extends Component {
           weather={this.state.weather}
           temp={this.state.temp}
           unit={this.state.unit}
-          isCelsius={this.changeUnits}/>
+          isCelsius={this.changeUnits}
+          backgroundImg={this.state.weatherImg}/>
         <div id="footer">
           <span>Local Weather App by</span> <a href="https://github.com/izabelka">Izabella Konstanciak</a><span>, 
-          using </span><a href="http://openweathermap.org">OpenWeatherMap</a> <span>API 
-          and </span><a href="https://erikflowers.github.io/weather-icons/">Weather Icons</a>
+          using </span><a href="https://www.apixu.com">Apixu</a> <span>API, </span><a href="https://www.flickr.com">Flickr</a>
+          <span> and </span><a href="https://erikflowers.github.io/weather-icons/">Weather Icons</a>
         </div>
     </div>
     )
