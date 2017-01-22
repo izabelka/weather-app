@@ -15,7 +15,8 @@ class App extends Component {
       temp: '',
       weather: '',
       unit: 'C',
-      weatherImg: ''
+      weatherImg: '',
+      isWeatherLoaded: false
     };
     this.changeUnits = this.changeUnits.bind(this);
   }
@@ -78,7 +79,8 @@ class App extends Component {
         this.setState({ 
           weatherImg: 'https://farm' + data.photos.photo[randomIndex].farm + '.staticflickr.com/'
           + data.photos.photo[randomIndex].server  + '/' + data.photos.photo[randomIndex].id + '_' 
-          + data.photos.photo[randomIndex].secret + '_b.jpg'
+          + data.photos.photo[randomIndex].secret + '_b.jpg',
+          isWeatherLoaded: true
         });
       });
   }
@@ -86,13 +88,16 @@ class App extends Component {
   render() {
     return(
       <div>
-        <Weather
-          city={this.state.city}
-          weather={this.state.weather}
-          temp={this.state.temp}
-          unit={this.state.unit}
-          isCelsius={this.changeUnits}
-          backgroundImg={this.state.weatherImg}/>
+        { !this.state.isWeatherLoaded && <div id="loader-bg"><div id="loader"></div></div>}
+        { this.state.isWeatherLoaded && 
+          <Weather
+            city={this.state.city}
+            weather={this.state.weather}
+            temp={this.state.temp}
+            unit={this.state.unit}
+            isCelsius={this.changeUnits}
+            backgroundImg={this.state.weatherImg}/>
+        }
         <div id="footer">
           <span>Local Weather App by</span> <a href="https://github.com/izabelka">Izabella Konstanciak</a><span>, 
           using </span><a href="https://www.apixu.com">Apixu</a> <span>API, </span><a href="https://www.flickr.com">Flickr</a>
