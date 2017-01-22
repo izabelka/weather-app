@@ -71,7 +71,7 @@ class App extends Component {
   }
 
   getWeatherImage() {
-    return $.getJSON('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=ba3908d227b57ef7e5353363ed92c867&text='
+    return $.getJSON('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=7ffd922c69bb6a907f3b16297c1e7969&text='
       + this.state.weather + '+weather&tags=' + this.state.weather + '&format=json&nojsoncallback=1')
       .then((data) => {
         let randomIndex = Math.floor(Math.random() * data.photos.perpage)
