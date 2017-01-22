@@ -44,8 +44,6 @@ class App extends Component {
 
   componentDidMount() {
     this.getCoordinates();
-    setTimeout( function() {this.getWeather()}.bind(this), 2000);
-    setTimeout( function() {this.getWeatherImage()}.bind(this), 3000);
   }
 
   getCoordinates() {
@@ -56,6 +54,7 @@ class App extends Component {
           longitude: data.longitude,
           city: data.city
         });
+        this.getWeather();
       });
   }
 
@@ -67,6 +66,7 @@ class App extends Component {
           temp: Math.round(data.current.temp_c),
           weather: data.current.condition.text
         });
+        this.getWeatherImage();
       });
   }
 
